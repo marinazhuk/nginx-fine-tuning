@@ -40,7 +40,7 @@ X-Cache-Key: httpweb-app:8083/cat1.jpg
 ```bash
 $ curl -I  http://localhost/cat1.jpg
 ```
-```toml @sample.conf
+```js
 HTTP/1.1 200 
 Server: nginx/1.25.2
 Date: Tue, 12 Dec 2023 17:05:50 GMT
@@ -60,7 +60,7 @@ Accept-Ranges: bytes
 ```bash
 $ curl -I  http://localhost/cat1.jpg
 ```
-```toml @sample.conf
+```js
 HTTP/1.1 200 
 Server: nginx/1.25.2
 Date: Tue, 12 Dec 2023 17:06:19 GMT
@@ -80,7 +80,7 @@ Accept-Ranges: bytes
 ```bash
 $ curl http://localhost/cat1.jpg | md5
 ```
-```toml @sample.conf
+```js
 9789967e1cbebae14722b1ecd581e98f
 ```
 5. change cat1.jpg  image to another in *web-app*
@@ -95,7 +95,7 @@ __cat1.jpg  cat1.jpg  cat2.png  cat4.gif  hello.html
 ```bash
 curl -I  http://localhost/cat1.jpg -H "Cache-Revalidate-Custom: true"
 ```
-```toml @sample.conf
+```js
 HTTP/1.1 200
 Server: nginx/1.25.2
 Date: Tue, 12 Dec 2023 17:12:33 GMT
@@ -114,6 +114,6 @@ Accept-Ranges: bytes
 ```bash
 $ curl http://localhost/cat1.jpg | md5
 ```
-```toml @sample.conf
+```js
 85e3abc377c5977cce5e1925af8cce7a
 ```
