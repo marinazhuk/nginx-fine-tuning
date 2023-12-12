@@ -21,7 +21,7 @@ port:8083
 ```bash
 $ curl -I  http://localhost/cat1.jpg
 ```
-```toml @sample.conf
+```js
 HTTP/1.1 200
 Server: nginx/1.25.2
 Date: Tue, 12 Dec 2023 17:05:21 GMT
