@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - web-app
+
+  web-app:
+    container_name: web-app
+    build: ./web-app
+    volumes:
+      - .m2:/root/.m2
+    environment:
+      SERVER_PORT=8083:
+    ports:
+      - "8083:8083"
